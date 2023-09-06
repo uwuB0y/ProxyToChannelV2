@@ -4,11 +4,15 @@ import time
 import threading
 import os
 
-token = "ur token" #توكنك
-chat_id = "@defproxy" #حط يوزر قناتك
-filename = "proxy.txt" #لاتغيره
+token = "ur token" #ur telegram Bot token
+chat_id = "@defproxy" #ur channel username 
+channelname = "ur channel's name"
+channelurl = "ur channel's url
+filename = "proxy.txt" #do not change it!!
+timeProxy = 60 # change it if u Want 
+timeFile = 3600 # change it if u Want
 url_1 = "https://gimmeproxy.com/api/getProxy"
-url_2 = "https://api.proxyscrape.com/v2/?request=getproxies&protocol=http&timeout=10000&country=all&ssl=all&anonymity=all"
+url_2 = "https://api.proxyscrape.com/v2/?request=getproxies&protocol=http&timeout=10000&country=all&ssl=all&anonymity=all" 
 
 bot = telebot.TeleBot(token)
 
@@ -19,12 +23,12 @@ def proxyGay():
             protocol = rq.json()["protocol"]
             ipport = rq.json()["ipPort"]
             country = rq.json()["country"]
-            messageProxy = f"*- New Proxy*\n*Ip-Port:* `{ipport}`.\n*Type:* {protocol}.\n*Country:* {country}.\n----- ------- ------- ----\n-=> [404](t.me/teamon404)"
+            messageProxy = f"*- New Proxy*\n*Ip-Port:* `{ipport}`.\n*Type:* {protocol}.\n*Country:* {country}.\n----- ------- ------- ----\n-=> [{channelname]({channelurl)"
             bot.send_message(chat_id, messageProxy, parse_mode="markdown", disable_web_page_preview=True)
             print("done send proxy")
         except Exception as e:
             print(f"an error when send proxy:\n{e}")
-        time.sleep(60)
+        time.sleep(timeProxy) 
 
 def send404():
     while True:
@@ -47,13 +51,13 @@ def send404():
                 bot.send_document(chat_id, txt, caption=cap)
                 print("done send proxy file")
         except Exception as e:
-            print("an error when send the file:")
+            print(f"an error when send the file:\n{e}")
         os.system("clear")
         print("done send file")
-        time.sleep(3600)
+        time.sleep(timeFile)
 
 oneminute = threading.Thread(target=proxyGay)
 onehour = threading.Thread(target=send404)
-#مسموح تنشر وتغير الحقوق مادام تذكر مصدري
+#by t.me/teamon404, t.me/py_pip
 oneminute.start()
 onehour.start()
