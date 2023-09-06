@@ -23,7 +23,7 @@ def proxyGay():
             protocol = rq.json()["protocol"]
             ipport = rq.json()["ipPort"]
             country = rq.json()["country"]
-            messageProxy = f"*- New Proxy*\n*Ip-Port:* `{ipport}`.\n*Type:* {protocol}.\n*Country:* {country}.\n----- ------- ------- ----\n-=> [{channelname]({channelurl)"
+            messageProxy = f"*- New Proxy*\n*Ip-Port:* `{ipport}`.\n*Type:* {protocol}.\n*Country:* {country}.\n----- ------- ------- ----\n-=> [{channelname}]({channelurl})"
             bot.send_message(chat_id, messageProxy, parse_mode="markdown", disable_web_page_preview=True)
             print("done send proxy")
         except Exception as e:
