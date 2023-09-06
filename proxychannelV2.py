@@ -7,7 +7,7 @@ import os
 token = "ur token" #ur telegram Bot token
 chat_id = "@defproxy" #ur channel username 
 channelname = "ur channel's name"
-channelurl = "ur channel's url
+channelurl = "ur channel's url"
 filename = "proxy.txt" #do not change it!!
 timeProxy = 60 # change it if u Want 
 timeFile = 3600 # change it if u Want
